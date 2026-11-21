@@ -37,7 +37,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\" && tsc",
+    "build": "npm run typecheck && tsdown",
     "typecheck": "tsc --noEmit",
     "lint": "oxlint .",
     "lint:fix": "oxlint --fix .",
@@ -52,6 +52,7 @@
   "devDependencies": {
     "oxfmt": "0.79.0",
     "oxlint": "1.94.0",
+    "tsdown": "0.23.7",
     "typescript": "6.0.3"
   }
 }
