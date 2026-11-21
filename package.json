@@ -1,0 +1,56 @@
+{
+  "name": "@storytw/oxlint-config",
+  "version": "1.0.0",
+  "description": "StoryTW shared Oxlint config for JavaScript, TypeScript, React, Vite, and Next.js",
+  "type": "module",
+  "keywords": [
+    "oxlint",
+    "oxlint-config",
+    "react",
+    "typescript",
+    "vite",
+    "nextjs"
+  ],
+  "author": "StoryTW",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StoryTW/story-oxlint-config.git"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./configs": {
+      "types": "./dist/configs/index.d.ts",
+      "import": "./dist/configs/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\" && tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint .",
+    "lint:fix": "oxlint --fix .",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
+    "prepack": "npm run build"
+  },
+  "peerDependencies": {
+    "oxlint": "^1.90.0"
+  },
+  "devDependencies": {
+    "oxfmt": "0.79.0",
+    "oxlint": "1.94.0",
+    "typescript": "6.0.3"
+  }
+}
