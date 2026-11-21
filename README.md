@@ -1,4 +1,5 @@
 # @storytw/oxlint-config
+
 Oxlint конфиг для Vite и Next.js
 
 ## 📌 Требования
@@ -8,6 +9,7 @@ Node.js ≥ 24
 Oxlint 1.90+
 
 ## 🚀 Быстрый старт
+
 1. Установите пакет из npm.
 
 ```sh
@@ -24,10 +26,10 @@ yarn add -D @storytw/oxlint-config
 2. В `oxlint.config.ts` импортируйте конфиг
 
 ```ts
-import storyConfig from '@storytw/oxlint-config';
+import { storyOxlintConfig } from '@storytw/oxlint-config';
 import { defineConfig } from 'oxlint';
 
-export default defineConfig(storyConfig({ framework: 'vite' }));
+export default defineConfig(storyOxlintConfig({ framework: 'vite' }));
 ```
 
 | Параметры                         | Правила                                                                                                         |
@@ -52,16 +54,16 @@ export default defineConfig(storyConfig({ framework: 'vite' }));
 
 ## Настройка правил
 
-Блоки `javascript`, `typescript`, `import` и `react` включены по умолчанию. 
-Укажите `false` для отключения блока или `[true, { rules, plugins }]` для его настройки. `plugins` принимает список встроенных плагинов Oxlint. 
+Блоки `javascript`, `typescript`, `import` и `react` включены по умолчанию.
+Укажите `false` для отключения блока или `[true, { rules, plugins }]` для его настройки. `plugins` принимает список встроенных плагинов Oxlint.
 Отдельные конфиги доступны из `@storytw/oxlint-config/configs`.
 
 ```ts
-import storyConfig from '@storytw/oxlint-config';
+import { storyOxlintConfig } from '@storytw/oxlint-config';
 import { defineConfig } from 'oxlint';
 
 export default defineConfig(
-  storyConfig({
+  storyOxlintConfig({
     framework: 'vite',
     typescript: [
       true,
@@ -79,7 +81,35 @@ export default defineConfig(
 );
 ```
 
-## 📦 Настройка папки .vscode -> settings.json 
+## Форматирование через Oxfmt
+
+Оба конфига доступны из корня пакета:
+
+```ts
+import { storyOxlintConfig, storyOxfmtConfig } from '@storytw/oxlint-config';
+```
+
+`storyOxlintConfig` — функция с параметрами, `storyOxfmtConfig` — готовый объект настроек форматирования.
+
+Установите Oxfmt:
+
+```sh
+npm install --save-dev oxfmt
+```
+
+Создайте `oxfmt.config.ts`:
+
+```ts
+import { storyOxfmtConfig } from '@storytw/oxlint-config';
+import { defineConfig } from 'oxfmt';
+
+export default defineConfig(storyOxfmtConfig);
+```
+
+Запускайте `oxfmt --write .` для форматирования и `oxfmt --check .` для проверки.
+Прежний default-импорт Oxlint и `oxfmtConfig` из `@storytw/oxlint-config/configs` остаются доступны.
+
+## 📦 Настройка папки .vscode -> settings.json
 
 ```sh
 {

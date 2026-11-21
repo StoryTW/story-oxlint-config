@@ -1,9 +1,9 @@
 import { defineConfig } from 'oxlint';
 
-import storyConfig from './src/index.ts';
+import { storyOxlintConfig } from './src/index.ts';
 
 export default defineConfig(
-  storyConfig({
+  storyOxlintConfig({
     framework: 'none',
     react: false,
   }),

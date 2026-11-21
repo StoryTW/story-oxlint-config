@@ -2,6 +2,8 @@ import { importConfig, javascriptConfig, reactBaseConfig, reactNextConfig, react
 
 import type { OxlintConfig } from 'oxlint';
 
+export { oxfmtConfig as storyOxfmtConfig } from './configs/oxfmt.ts';
+
 export type ConfigOption = boolean | [enabled: boolean, overrides: Pick<OxlintConfig, 'rules' | 'plugins'>];
 
 export interface StoryOptions {
@@ -47,7 +49,7 @@ function resolveConfig(config: OxlintConfig, option: ConfigOption = true): Oxlin
   };
 }
 
-export default function storyConfig(options: StoryOptions): OxlintConfig {
+export function storyOxlintConfig(options: StoryOptions): OxlintConfig {
   if (!options || !['vite', 'next', 'none'].includes(options.framework)) {
     throw new TypeError('storyConfig: framework must be "vite", "next" or "none".');
   }
@@ -76,3 +78,5 @@ export default function storyConfig(options: StoryOptions): OxlintConfig {
     ignorePatterns: configs.flatMap((config) => config.ignorePatterns ?? []),
   };
 }
+
+export default storyOxlintConfig;

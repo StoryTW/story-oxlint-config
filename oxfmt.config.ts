@@ -1,5 +1,5 @@
 import { defineConfig } from 'oxfmt';
 
-import { oxfmtConfig } from './src/configs/oxfmt.ts';
+import { storyOxfmtConfig } from './src/index.ts';
 
-export default defineConfig(oxfmtConfig);
+export default defineConfig(storyOxfmtConfig);
