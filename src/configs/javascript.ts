@@ -56,6 +56,17 @@ export const javascriptConfig: OxlintConfig = {
     'no-unsafe-optional-chaining': 'error',
     'no-unused-labels': 'error',
     'no-unused-private-class-members': 'error',
+    'no-unused-vars': [
+      'warn',
+      {
+        vars: 'all',
+        varsIgnorePattern: '^_',
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+        ignoreRestSiblings: true,
+        fix: { imports: 'off', variables: 'off' },
+      },
+    ],
     'no-useless-assignment': 'error',
     'no-useless-backreference': 'error',
     'no-useless-catch': 'error',

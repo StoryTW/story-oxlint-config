@@ -43,7 +43,8 @@
     "lint:fix": "oxlint --fix .",
     "format": "oxfmt --write .",
     "format:check": "oxfmt --check .",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "test": "npm run build && node --test"
   },
   "peerDependencies": {
     "oxlint": "^1.90.0"

@@ -6,7 +6,7 @@ export const reactBaseConfig: OxlintConfig = {
   plugins: ['react'],
   overrides: [
     {
-      files: reactFiles,
+      files: ['**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}'],
       rules: {
         'react/rules-of-hooks': 'error',
         'react/exhaustive-deps': 'off',
@@ -22,6 +22,11 @@ export const reactBaseConfig: OxlintConfig = {
         'react/purity': 'error',
         'react/set-state-in-render': 'error',
         'react/unsupported-syntax': 'warn',
+      },
+    },
+    {
+      files: reactFiles,
+      rules: {
         'react/jsx-key': 'error',
       },
     },
