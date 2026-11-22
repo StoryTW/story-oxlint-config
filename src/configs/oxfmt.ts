@@ -11,7 +11,7 @@ export const oxfmtConfig = {
   arrowParens: 'always',
   bracketSpacing: true,
   bracketSameLine: false,
-  singleAttributePerLine: false,
+  singleAttributePerLine: true,
   objectWrap: 'preserve',
   experimentalOperatorPosition: 'start',
   endOfLine: 'lf',

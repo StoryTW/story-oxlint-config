@@ -51,7 +51,7 @@ function resolveConfig(config: OxlintConfig, option: ConfigOption = true): Oxlin
 
 export function storyOxlintConfig(options: StoryOptions): OxlintConfig {
   if (!options || !['vite', 'next', 'none'].includes(options.framework)) {
-    throw new TypeError('storyConfig: framework must be "vite", "next" or "none".');
+    throw new TypeError('storyOxlintConfig: framework must be "vite", "next" or "none"');
   }
 
   const frameworkConfigs = {
