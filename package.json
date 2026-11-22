@@ -1,6 +1,6 @@
 {
   "name": "@storytw/oxlint-config",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "StoryTW shared Oxlint config for JavaScript, TypeScript, React, Vite, and Next.js",
   "type": "module",
   "keywords": [
